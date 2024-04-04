@@ -1,0 +1,52 @@
+public class Car {
+    // Defining instance variables
+    private int odometer;
+    private String make;
+    private String model;
+
+    // Build constructors
+    public Car() {
+        // Default constructors
+    }
+
+    public Car(String make) {  // take a String 'make'
+        this.make = make;
+    }
+
+    public Car(String make, String model) { //  two Strings: a 'make' and a 'model'
+        this.make = make;
+        this.model = model;
+    }
+
+    // Initialize constructors
+    public Car(String make, String model, int odometer) {
+        this.make = make;
+        this.model = model;
+        this.odometer = odometer;
+    }
+
+    // Getter method
+    public void printAddress() {
+        System.out.println(this);
+    }
+
+    // Override :3
+    @Override
+    public String toString() { // I asked my friend to help me with this part! I was a lil unsure how to do it sorry ><
+        return "Car{odometer=" + odometer + ", make='" + make + '\'' + ", model='" + model + '\'' + '}';
+    }
+
+    public static void main(String[] args) { // Main that instantiates 2 cars and prints them out
+        Car c1 = new Car();
+        Car c2 = new Car();
+        System.out.println(c1.toString());
+        System.out.println(c2.toString());
+        // Add test for constructors
+        Car c3 = new Car("Meow");
+        c3.model = "Honda";
+        c3.odometer = 100;
+        // Print Testing
+        System.out.println(c3);
+        c3.printAddress(); // Answer to question: The two are the same because it's still the same car(?)
+    }
+}
